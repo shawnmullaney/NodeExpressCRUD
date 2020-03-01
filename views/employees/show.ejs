@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Miner Detail</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/employees">Miners</a></h3>
+      <h1>Miner Details</h1>
+      <table>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>:</td>
+            <td><%= employee.name %></td>
+          </tr>
+          <tr>
+            <td>Type</td>
+            <td>:</td>
+            <td><%= employee.type %></td>
+          </tr>
+          <tr>
+            <td>Position</td>
+            <td>:</td>
+            <td><%= employee.position %></td>
+          </tr>
+          <tr>
+            <td>Hashrate</td>
+            <td>:</td>
+            <td><%= employee.hashrate %>Th/s</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3><a href="/employees/edit/<%= employee._id%>">EDIT</a></h3>
+      <form action="/employees/delete/<%= employee._id%>" method="post">
+        <button type="submit">DELETE</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Miner List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/employees/create">New Miner</a></h3>
+      <h1>Miners</h1>
+      <% if(employees.length>0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Miner</th>
+            <th>Type</th>
+            <th>Position</th>
+            <th>Hashrate</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<employees.length;i++) { %>
+            <tr>
+              <td><a href="/employees/show/<%= employees[i]._id%>"><%= employees[i].name%></a></td>
+              <td><%= employees[i].type%></td>
+			<td><%= employees[i].position%></td>
+			<td><%= employees[i].hashrate%></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div>No Miners found.</div>
+      <% } %>
+    </div>
+  </body>
+</html>
